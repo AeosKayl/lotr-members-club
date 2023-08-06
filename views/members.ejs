@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css" />
+    <title>LOTRMC Members</title>
+  </head>
+  <body>
+    <%- include("partials/navigation") %>
+    <main>
+      <div class="container main-container">
+        <h2><%= title %></h2>
+        <% if (members.length === 0) { %>
+        <p>No members are registered yet.</p>
+        <% } else { %>
+        <ul class="members-list">
+          <% members.forEach(member => { %>
+          <li class="members-list-item">
+            <a href="/member/<%= member._id %>"><%= member.name %></a>
+          </li>
+          <% }); %>
+        </ul>
+        <% } %>
+      </div>
+    </main>
+    <%- include("partials/footer") %>
+  </body>
+</html>

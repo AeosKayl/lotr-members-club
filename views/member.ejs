@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css" />
+    <title>LOTRMC Member</title>
+  </head>
+  <body>
+    <%- include("partials/navigation") %>
+    <main>
+      <div class="container main-container">
+        <h2><%= title %></h2>
+        <p>Name: <b><%= member.name %></b></p>
+        <p>Email: <%= member.email %></p>
+        <p>Phone Number: <%= member.phone %></p>
+        <p>Date of Registration: <%= member.date %></p>
+        <p>Favourite Book: <%= member.book %></p>
+        <a href="/member/<%= member._id%>/delete">
+          <button class="deleteBtn" id="deleteBtn" data-id="<%=member._id%>">
+            Delete user
+          </button></a
+        >
+      </div>
+    </main>
+    <%- include("partials/footer") %>
+  </body>
+</html>
